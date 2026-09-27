@@ -1,25 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { InteractiveSync } from './InteractiveSync';
 
 export const Hero: React.FC = () => {
-  const scrollTo = (id: string) => {
-    const el = document.querySelector(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const techBadges = [
-    'AI',
+    'AI SYSTEMS',
+    'AI AGENTS',
     'RAG',
-    'AGENTS',
     'AUTOMATION',
     'COMPUTER VISION',
   ];
 
   return (
-    <section id="home" className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-[92vh] pt-32 pb-20 flex items-center overflow-hidden">
       {/* Background radial ambient lights */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-cyan/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/3 right-10 w-[500px] h-[500px] bg-brand-purple/15 rounded-full blur-[160px] pointer-events-none" />
@@ -34,7 +28,7 @@ export const Hero: React.FC = () => {
             {/* Small Label pill */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0B1020]/90 border border-brand-cyan/30 text-xs font-mono tracking-wider text-brand-cyan shadow-glow-cyan/50 backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
-              <span>AI • SOFTWARE • INNOVATION</span>
+              <span>SYNQVERO AI • INTELLIGENT SYSTEMS</span>
             </div>
 
             {/* Dominant Headline */}
@@ -50,33 +44,25 @@ export const Hero: React.FC = () => {
 
             {/* Supporting Narrative */}
             <p className="text-base sm:text-lg text-brand-muted max-w-xl leading-relaxed">
-              Synqvero builds practical AI-powered software that connects intelligent technology with real-world problems, workflows, and businesses.
+              Synqvero AI builds intelligent systems, AI agents, and automation solutions that help businesses turn information into action.
             </p>
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <a
-                href="#projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollTo('#projects');
-                }}
+              <Link
+                to="/products"
                 className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-purple shadow-glow-cyan hover:shadow-glow-purple transition-all duration-300 transform hover:-translate-y-0.5"
               >
-                <span>Explore our work</span>
+                <span>Explore Products</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              </Link>
 
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollTo('#contact');
-                }}
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-medium text-sm text-white bg-[#0B1020] border border-white/10 hover:border-brand-cyan/40 hover:bg-white/[0.05] transition-all duration-300"
               >
-                <span>Let's build together</span>
-              </a>
+                <span>Work With Us</span>
+              </Link>
             </div>
 
             {/* Under buttons ticker tags */}

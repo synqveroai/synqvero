@@ -16,34 +16,34 @@ export const HowWeWork: React.FC = () => {
         <div className="max-w-3xl text-left space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-brand-cyan tracking-wider">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan" />
-            <span>THE PROCESS</span>
+            <span>HOW WE WORK</span>
           </div>
 
           <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
-            From problem to <span className="text-gradient-synq">intelligence.</span>
+            From Problem to <span className="text-gradient-synq">Production.</span>
           </h2>
 
           <p className="text-base sm:text-lg text-brand-muted leading-relaxed">
-            A disciplined, iterative methodology that bridges ambiguous business problems with reliable, production-tested AI systems.
+            A disciplined, iterative engineering methodology that bridges ambiguous operational friction with reliable, measurable AI systems.
           </p>
         </div>
 
-        {/* 4-Step Connected Timeline */}
+        {/* 5-Step Connected Timeline */}
         <div className="relative">
           {/* Desktop Flowing Connection Line */}
-          <div className="hidden lg:block absolute top-12 left-12 right-12 h-[2px] bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-purple z-0">
+          <div className="hidden lg:block absolute top-12 left-10 right-10 h-[2px] bg-gradient-to-r from-brand-cyan via-brand-blue to-brand-purple z-0">
             {/* Animated Energy Pulse */}
             <div className="absolute top-1/2 -translate-y-1/2 w-24 h-1.5 bg-white blur-[2px] rounded-full animate-[float_4s_ease-in-out_infinite]" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 relative z-10">
             {workflowSteps.map((step, idx) => {
               const isSelected = activeStep === idx;
               return (
                 <div
                   key={step.number}
                   onMouseEnter={() => setActiveStep(idx)}
-                  className={`group p-6 rounded-2xl transition-all duration-300 flex flex-col justify-between text-left cursor-pointer ${
+                  className={`group p-5.5 rounded-2xl transition-all duration-300 flex flex-col justify-between text-left cursor-pointer ${
                     isSelected
                       ? 'bg-[#0E1528] border border-brand-cyan/40 shadow-glow-subtle'
                       : 'bg-[#0B1020]/90 border border-white/[0.06] hover:border-white/20'
@@ -52,24 +52,24 @@ export const HowWeWork: React.FC = () => {
                   <div className="space-y-4">
                     {/* Node circle on the timeline */}
                     <div className="flex items-center justify-between">
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-mono font-bold text-sm transition-all duration-300 ${
+                      <div className={`w-11 h-11 rounded-xl flex items-center justify-center font-mono font-bold text-sm transition-all duration-300 ${
                         isSelected
                           ? 'bg-gradient-to-r from-brand-cyan to-brand-blue text-white shadow-glow-cyan'
                           : 'bg-white/[0.04] text-brand-muted border border-white/10 group-hover:text-white'
                       }`}>
                         {step.number}
                       </div>
-                      <span className="text-xs font-mono text-brand-dim uppercase tracking-wider">
-                        PHASE 0{idx + 1}
+                      <span className="text-[11px] font-mono text-brand-dim uppercase tracking-wider">
+                        STEP 0{idx + 1}
                       </span>
                     </div>
 
                     {/* Step Title & Subtitle */}
                     <div className="space-y-1">
-                      <h3 className="font-display text-xl font-bold text-white group-hover:text-brand-cyan transition-colors">
+                      <h3 className="font-display text-lg font-bold text-white group-hover:text-brand-cyan transition-colors">
                         {step.title}
                       </h3>
-                      <p className="text-xs font-mono text-brand-cyan">
+                      <p className="text-xs font-mono text-brand-cyan/90 leading-snug">
                         {step.description}
                       </p>
                     </div>
@@ -86,8 +86,8 @@ export const HowWeWork: React.FC = () => {
                   </div>
 
                   {/* Bottom indicator */}
-                  <div className="pt-6 mt-6 border-t border-white/[0.04] flex items-center justify-between text-[11px] font-mono text-brand-dim">
-                    <span>STATUS: OPERATIONAL</span>
+                  <div className="pt-5 mt-5 border-t border-white/[0.04] flex items-center justify-between text-[11px] font-mono text-brand-dim">
+                    <span>STAGE {idx + 1}</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 group-hover:text-brand-cyan transition-all" />
                   </div>
                 </div>

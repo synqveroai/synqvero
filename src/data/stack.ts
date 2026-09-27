@@ -7,7 +7,7 @@ export const stackLayers: StackLayer[] = [
     label: 'INTELLIGENT UI',
     sublabel: 'Human-Centered Interaction Layer',
     description: 'Responsive, latency-optimized user interfaces and conversational surfaces designed for natural human collaboration.',
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Streamlit', 'WebSockets'],
+    technologies: ['React / Next.js', 'TypeScript', 'Tailwind CSS', 'Streamlit', 'WebSockets'],
     connections: ['ai-applications'],
     color: '#18C8EF'
   },
@@ -16,7 +16,7 @@ export const stackLayers: StackLayer[] = [
     level: 2,
     label: 'AI APPLICATIONS',
     sublabel: 'Domain Logic & Orchestration',
-    description: 'High-level business solutions, multi-modal pipelines, and decision services integrating intelligent inference into daily user tasks.',
+    description: 'High-level business solutions, multimodal pipelines, and decision services integrating intelligent inference into daily user tasks.',
     technologies: ['FastAPI', 'Python', 'Asynchronous Pipelines', 'REST APIs'],
     connections: ['ai-agents', 'rag-retrieval'],
     color: '#2897F0'
@@ -27,7 +27,7 @@ export const stackLayers: StackLayer[] = [
     label: 'AI AGENTS',
     sublabel: 'Reasoning & Autonomous Tools',
     description: 'Goal-oriented agents that dynamically plan, utilize specialized tools, call internal functions, and evaluate outputs.',
-    technologies: ['LangChain', 'ReAct Pattern', 'Tool Calling', 'SQL Agents', 'Task Evaluators'],
+    technologies: ['AI Agents', 'LangChain', 'Tool Calling', 'ReAct Pattern', 'Task Evaluators'],
     connections: ['llm-layer'],
     color: '#3268F2'
   },
@@ -36,8 +36,8 @@ export const stackLayers: StackLayer[] = [
     level: 3,
     label: 'RAG & RETRIEVAL',
     sublabel: 'Contextual Vector Intelligence',
-    description: 'Semantic document indexing, dense vector search, hybrid re-ranking, and dynamic context injection for zero-hallucination accuracy.',
-    technologies: ['ChromaDB', 'Vector Databases', 'Dense Embeddings', 'Hybrid Reranking', 'Semantic Chunking'],
+    description: 'Semantic document indexing, dense vector search, hybrid reranking, and dynamic context injection for zero-hallucination accuracy.',
+    technologies: ['RAG', 'Vector Databases', 'ChromaDB', 'Embeddings', 'Semantic Chunking'],
     connections: ['llm-layer', 'knowledge-data'],
     color: '#5356EF'
   },
@@ -47,7 +47,7 @@ export const stackLayers: StackLayer[] = [
     label: 'LLM & FOUNDATION LAYER',
     sublabel: 'Multi-Model Inference & Alignment',
     description: 'Optimized foundational intelligence layer supporting both cloud frontier models and locally self-hosted lightweight neural models.',
-    technologies: ['LLMs', 'Prompt Engineering', 'Structured JSON Modes', 'Context Caching', 'Fine-Tuning'],
+    technologies: ['LLMs', 'Multimodal AI', 'Prompt Engineering', 'Structured JSON Modes', 'Context Caching'],
     connections: ['knowledge-data'],
     color: '#7544ED'
   },
@@ -56,8 +56,8 @@ export const stackLayers: StackLayer[] = [
     level: 5,
     label: 'KNOWLEDGE & DATA SYSTEMS',
     sublabel: 'Unified Information Store',
-    description: 'Structured enterprise relational stores, unstructured file lakes, multimodal media repositories, and semantic vector graphs.',
-    technologies: ['Vector Databases', 'PostgreSQL', 'SQLite', 'Document Stores', 'Object Storage'],
+    description: 'Structured relational stores, unstructured document lakes, multimodal media repositories, and semantic vector graphs.',
+    technologies: ['Vector Databases', 'Databases', 'SQLite', 'Document Stores', 'Object Storage'],
     connections: ['apis-systems'],
     color: '#8B4FE8'
   },
@@ -67,25 +67,33 @@ export const stackLayers: StackLayer[] = [
     label: 'APIs & BUSINESS SYSTEMS',
     sublabel: 'External Tool & Workflow Integration',
     description: 'Two-way integration endpoints connecting AI intelligence back into the exact software, CRMs, ERPs, and hardware cameras already in use.',
-    technologies: ['REST APIs', 'Webhooks', 'MediaPipe Camera Feeds', 'OpenCV Video Streams', 'Cloud Microservices'],
+    technologies: ['APIs', 'Docker', 'Computer Vision', 'OpenCV', 'MediaPipe'],
     connections: [],
     color: '#A259EC'
   }
 ];
 
+export const categorizedTechnologies = {
+  aiAndML: [
+    { name: 'LLMs', description: 'Large language foundation models (Groq Llama 3.3, Google Gemini, OpenAI)' },
+    { name: 'RAG', description: 'Retrieval-Augmented Generation for grounded factual question answering' },
+    { name: 'AI Agents', description: 'Autonomous goal-driven systems with dynamic tool execution loops' },
+    { name: 'Embeddings', description: 'Dense high-dimensional vector representations for semantic search' },
+    { name: 'Multimodal AI', description: 'Integrated reasoning across text, voice notes, documents, and images' },
+    { name: 'Computer Vision', description: 'Real-time gesture recognition, segmentation (U-Net), and explainability (Grad-CAM)' }
+  ],
+  engineering: [
+    { name: 'Python', description: 'Primary backend and machine learning engineering environment' },
+    { name: 'FastAPI', description: 'High-performance asynchronous REST microservice framework' },
+    { name: 'React / Next.js', description: 'Responsive, accessible frontend application architecture' },
+    { name: 'APIs', description: 'REST, GraphQL, WebSockets, and webhook orchestration pipelines' },
+    { name: 'Databases', description: 'Relational & operational storage (PostgreSQL, SQLite)' },
+    { name: 'Vector Databases', description: 'Embedded & clustered vector indices (ChromaDB)' },
+    { name: 'Docker', description: 'Containerized reproducible microservices and isolated deployments' }
+  ]
+};
+
 export const allTechnologies = [
-  { name: 'Python', category: 'Core Language' },
-  { name: 'LangChain', category: 'Agent Orchestration' },
-  { name: 'LLMs', category: 'Foundation Models' },
-  { name: 'RAG', category: 'Contextual Retrieval' },
-  { name: 'Embeddings', category: 'Vector Semantics' },
-  { name: 'Vector Databases', category: 'ChromaDB & Indexing' },
-  { name: 'FastAPI', category: 'High-Performance Backend' },
-  { name: 'Streamlit', category: 'Rapid AI Prototypes' },
-  { name: 'TensorFlow', category: 'Deep Learning' },
-  { name: 'Keras', category: 'Neural Networks' },
-  { name: 'Scikit-learn', category: 'Machine Learning' },
-  { name: 'OpenCV', category: 'Computer Vision' },
-  { name: 'MediaPipe', category: 'Real-Time Perception' },
-  { name: 'React & TypeScript', category: 'Frontend Architecture' },
+  ...categorizedTechnologies.aiAndML.map((t) => ({ name: t.name, category: 'AI & ML' })),
+  ...categorizedTechnologies.engineering.map((t) => ({ name: t.name, category: 'Engineering' }))
 ];

@@ -60,7 +60,25 @@ export interface ValuePillar {
 export interface FutureProductConcept {
   name: string;
   category: string;
-  badge: 'Exploring' | 'Future Product Concept';
+  badge: 'Exploring' | 'Future Product Concept' | 'In Development';
   description: string;
   targetWorkflow: string;
+}
+
+export interface SolutionItem {
+  id: string;
+  title: string;
+  summary: string;
+  description: string;
+  capabilities: string[];
+  technologies: string[];
+  useCases: string[];
+  icon: string;
+}
+
+export interface ResourceCategory {
+  id: string;
+  name: string;
+  description: string;
+  upcomingTopics: string[];
 }

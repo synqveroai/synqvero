@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { stackLayers, allTechnologies } from '../data/stack';
+import { stackLayers, allTechnologies, categorizedTechnologies } from '../data/stack';
+import { Cpu, Terminal, Sparkles, Layers } from 'lucide-react';
 
 export const IntelligenceStack: React.FC = () => {
   const [selectedLayerId, setSelectedLayerId] = useState<string>('ai-agents');
@@ -12,12 +13,12 @@ export const IntelligenceStack: React.FC = () => {
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-brand-blue/10 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-brand-cyan tracking-wider">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan animate-pulse" />
-            <span>ARCHITECTURAL INTEGRITY</span>
+            <span>TECHNOLOGY BEHIND SYNQVERO</span>
           </div>
 
           <h2 className="font-display text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
@@ -27,6 +28,59 @@ export const IntelligenceStack: React.FC = () => {
           <p className="text-base sm:text-lg text-brand-muted leading-relaxed">
             Not a disconnected set of AI demos. A coherent, layered architecture designed to bring deep intelligence from model weights into daily human workflows.
           </p>
+        </div>
+
+        {/* Categorized Technologies Grid (AI & ML vs Engineering) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* AI & ML Card */}
+          <div className="p-8 rounded-2xl bg-[#0B1020]/90 border border-brand-cyan/20 space-y-6 text-left shadow-lg">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan">
+                <Cpu className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-display text-xl font-bold text-white">AI & Machine Learning</h3>
+                <p className="text-xs font-mono text-brand-cyan">Neural reasoning, multimodal perception & retrieval</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              {categorizedTechnologies.aiAndML.map((tech) => (
+                <div
+                  key={tech.name}
+                  className="px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-brand-cyan/40 transition-colors flex items-center gap-2 text-xs font-medium text-slate-200"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-brand-cyan shrink-0" />
+                  <span>{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Engineering Card */}
+          <div className="p-8 rounded-2xl bg-[#0B1020]/90 border border-brand-blue/20 space-y-6 text-left shadow-lg">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-brand-blue/10 border border-brand-blue/30 flex items-center justify-center text-brand-blue">
+                <Terminal className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="font-display text-xl font-bold text-white">Engineering & Infrastructure</h3>
+                <p className="text-xs font-mono text-brand-blue">Scalable backends, microservices & reliable pipelines</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              {categorizedTechnologies.engineering.map((tech) => (
+                <div
+                  key={tech.name}
+                  className="px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-brand-blue/40 transition-colors flex items-center gap-2 text-xs font-medium text-slate-200"
+                >
+                  <Layers className="w-3.5 h-3.5 text-brand-blue shrink-0" />
+                  <span>{tech.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Visual Architecture Layout */}
