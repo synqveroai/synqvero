@@ -34,7 +34,7 @@ export const Logo: React.FC<LogoProps> = ({
         {showTagline && (
           <div className="flex flex-col">
             <span className="font-display font-bold tracking-tight text-white text-lg">
-              Synqvero
+              Syn<span className="text-brand-blue">q</span>vero
             </span>
             <span className="text-[11px] font-medium text-brand-muted tracking-wide">
               Intelligence that works in sync.
@@ -90,7 +90,7 @@ export const Logo: React.FC<LogoProps> = ({
         <div className="flex flex-col">
           <div className="flex items-center gap-1.5">
             <span className="font-display font-bold tracking-tight text-white text-xl sm:text-2xl leading-none">
-              Synq<span className="text-[#7544ED]">v</span>ero
+              Syn<span className="text-brand-blue">q</span>vero
             </span>
             {/* Signature dual-petal brand mark */}
             <div className="flex -space-x-1 items-center mb-2">
